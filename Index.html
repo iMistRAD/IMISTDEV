@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMist Wi-Fi Portal</title>
+    <link rel="icon" type="image/png"
+        href="https://www.imist.com/wp-content/uploads/2019/05/cropped-cropped-droplets-favicon-1.png">
+    <style>
+        body {
+            background-color: #00355a;
+            background-image: url("https://www.transparenttextures.com/patterns/graphy-dark.png");
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2 {
+            color: rgb(255, 255, 255);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        .form-container {
+            background-color: #ffffffc0;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            margin: 15px auto;
+        }
+
+        form {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #000000;
+        }
+
+        .input-group {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 300px;
+            margin: 20px auto;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            font-size: 18px;
+            padding: 10px;
+            padding-right: 40px;
+        }
+
+        form i {
+            position: absolute;
+            right: -4%;
+            cursor: pointer;
+            color: #817c7c;
+            top: 55px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #95C553;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            color: #fff;
+            font-size: smaller;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        footer a i {
+            color: #fff;
+        }
+
+        footer a:hover {
+            color: rgb(25, 93, 182);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            body {
+                margin: 15px;
+                padding: 15px;
+            }
+            footer {
+            font-size: x-small;
+        }
+        }
+
+        @media (max-width: 350px) {
+            body {
+                margin: 10px;
+                padding: 10px;
+            }
+            footer {
+            font-size: xx-small;
+        }
+        }
+    </style>
+    <!-- Other meta tags and styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header style="text-align: center;">
+        <h1>Wi-Fi Setup Portal</h1>
+        <h2>Fill out the fields below to get your system connected</h2>
+        <img src="https://www.imist.com/wp-content/uploads/2020/01/logo-300.png" alt="iMist Long Logo">
+    </header>
+
+    <main>
+        <div class="form-container">
+            <form method="post">
+                <div class="input-group">
+                    <label for="ssid">Network Name:</label><br>
+                    <input type="text" id="ssid" name="ssid" minlength="2" maxlength="64" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Network Password:</label><br>
+                    <input type="password" name="password" id="password" minlength="8" required>
+                    <i class="fas fa-eye" id="togglePassword"></i>
+                </div>
+                <button type="submit" id="submit" class="submit">Connect</button>
+            </form>
+        </div>
+
+    </main>
+
+    <!-- JS -->
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+
+    <footer>
+        <p>&copy; I-MIST LTD Copyright 2024. All rights reserved. Registered in England and Wales.</p>
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+    </footer>
+
+</body>
+
+</html>
