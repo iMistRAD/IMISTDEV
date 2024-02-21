@@ -100,9 +100,9 @@
         }
 
         footer i {
-    font-size: 30px; /* Adjust this value as needed */
-    margin-right: 10px; /* Adds some space to the right of each icon */
-}
+            font-size: 30px;
+            margin-right: 10px;
+        }
 
         /* Mobile adjustments */
         @media (max-width: 768px) {
@@ -110,9 +110,10 @@
                 margin: 15px;
                 padding: 15px;
             }
+
             footer {
-            font-size: x-small;
-        }
+                font-size: x-small;
+            }
         }
 
         @media (max-width: 350px) {
@@ -120,9 +121,10 @@
                 margin: 10px;
                 padding: 10px;
             }
+
             footer {
-            font-size: xx-small;
-        }
+                font-size: xx-small;
+            }
         }
     </style>
     <!-- Other meta tags and styles -->
@@ -146,7 +148,7 @@
                 <div class="input-group">
                     <label for="password">Network Password:</label><br>
                     <input type="password" name="password" id="password" minlength="8" required>
-                    <i class="fas fa-eye" id="togglePassword"style="top: 65%;"></i>
+                    <i class="fas fa-eye" id="togglePassword" style="top: 65%;"></i>
                 </div>
                 <button type="submit" id="submit" class="submit">Connect</button>
             </form>
